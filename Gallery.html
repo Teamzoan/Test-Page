@@ -54,6 +54,34 @@ nav a {
 nav a:hover {
     color: #3498db; /* Changes color when you hover */
 }
+.image-grid {
+    display: grid;
+    /* This creates 3 columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
+    /* This adds a 20px gap between the images */
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%;      /* Makes image fill the grid square */
+    height: 200px;    /* Sets a consistent height */
+    object-fit: cover; /* Crops the image so it doesn't look stretched */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* This part makes it look good on Phones */
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    }
+}
 </style>
     <h1>Welcome to The Litty Florist</h1>
     <nav>
@@ -69,6 +97,17 @@ nav a:hover {
         <h2>Andy's Gallery</h2>
         <p>This is where i cam going to display all of my pictures</p>
         <img src="deck.jpeg" alt="Description" style="max-width: 50%; height: auto; display: block;">
+        <section class="gallery-section">
+    <h2>My Image Gallery</h2>
+    <div class="image-grid">
+        <img src="gdsk.jpeg" alt="Image 1">
+        <img src="gdsk.jpeg" alt="Image 2">
+        <img src="gdsk.jpeg" alt="Image 3">
+        <img src="gdsk.jpeg" alt="Image 4">
+        <img src="gdsk.jpeg" alt="Image 5">
+        <img src="gdsk.jpeg" alt="Image 6">
+    </div>
+</section>
         
         <button onclick="sayHello()">Click for a Surprise</button>
     </section>
@@ -76,7 +115,7 @@ nav a:hover {
 </main>
 <script>
     function sayHello() {
-        alert("Congrats! You just built and scripted your first website on a Mac!");
+        alert("Congrats! You are a mong!");
     }
 </script>
 <footer>
